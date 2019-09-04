@@ -129,8 +129,6 @@ public class CriteriaTest {
         CriteriaQuery<Customer> criteriaQuery = criteriaBuilder.createQuery(Customer.class);
         Root<Customer> customer = criteriaQuery.from(Customer.class);
         
-        
-//        List<Predicate> predicateList = new ArrayList<>();
         List<Predicate> predicateList = whereClauseMap.entrySet().stream()
                 .map(conditionItem -> {
                     String columnName = this.getColumnName(conditionItem.getKey());

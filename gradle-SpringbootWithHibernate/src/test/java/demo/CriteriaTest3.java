@@ -12,18 +12,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -34,10 +32,10 @@ import demo.customer.Customer;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CriteriaTest2 {
+public class CriteriaTest3 {
 
-    @Autowired
-    private EntityManagerFactory entityManagerFactory;
+    @PersistenceContext
+    private EntityManager entityManager;
     
     @Test
     public void criteriaEqualTest() {
@@ -116,19 +114,15 @@ public class CriteriaTest2 {
     
     // store
     private List<Customer> findByDynaicCondition(String filter) {
-        SessionFactory sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
-        Session session = sessionFactory.openSession();
-        List<Customer> customerList = this.executeCriteriaQuery(session, Customer.class, filter);
-        session.close();
-        return customerList;
+        return this.executeCriteriaQuery(entityManager, Customer.class, filter);
     }
     
     // criteria support
-    private <T> List<T> executeCriteriaQuery(Session session, Class<T> targetClass, String filter) {
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+    private <T> List<T> executeCriteriaQuery(EntityManager entityManager, Class<T> targetClass, String filter) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> criteriaQuery = this.generateCriteriaQuery(criteriaBuilder, targetClass, filter);
-        Query<T> query = session.createQuery(criteriaQuery);
-        return query.getResultList();
+        TypedQuery<T> typedQuery = entityManager.createQuery(criteriaQuery);
+        return typedQuery.getResultList();
     }
     
     // criteria support
@@ -239,10 +233,10 @@ public class CriteriaTest2 {
     
     private String getAction(String key) {
         String[] keyNameArray = key.split(":");
-        String action = keyNameArray[1];
         if (keyNameArray.length == 1) {
             return EQUAL;
         }
+        String action = keyNameArray[1];
         if (!ACTION_SET.contains(action)) {
             throw new RuntimeException("'" + action + "' is not support.");
         }

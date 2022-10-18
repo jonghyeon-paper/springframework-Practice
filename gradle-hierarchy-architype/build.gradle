@@ -1,0 +1,52 @@
+plugins {
+    //id 'java'
+    id 'org.springframework.boot' version "${springBootPluginVersion}"
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+/*
+ * hierarchy
+ * ─ [directory]gradle-hierarchy-architype
+ *   └ [directory]multiple-project
+ *     ├ [directory]applications
+ *     │ └ [app]hello
+ *     └ [directory]modules
+ * 
+ */
+allprojects {
+    if (it.name != 'gradle-hierarchy-architype' &&
+        it.name != 'multiple-project' &&
+        it.name != 'applications' &&
+        it.name != 'modules') {
+
+        apply plugin: 'java'
+        apply plugin: 'org.springframework.boot'
+        
+        ext {
+            springBootVersion = '2.7.4'
+        }
+
+        java {
+            sourceCompatibility '1.8' // source version
+            targetCompatibility '1.8' // compile version(runtime version)
+        }
+
+        repositories {
+            mavenCentral()
+        }
+    }
+}
+
+subprojects {
+    if (it.name != 'gradle-hierarchy-architype' &&
+        it.name != 'multiple-project' &&
+        it.name != 'applications') {
+
+        dependencies {
+            // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+            testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
+        }
+    }
+}

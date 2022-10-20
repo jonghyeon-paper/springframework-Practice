@@ -1,6 +1,6 @@
 plugins {
     //id 'java'
-    id 'org.springframework.boot' version "${springBootPluginVersion}"
+    id 'org.springframework.boot' version "$springBootVersion"
 }
 
 group = 'com.example'
@@ -27,10 +27,6 @@ allprojects {
 
         apply plugin: 'java'
         apply plugin: 'org.springframework.boot'
-        
-        ext {
-            springBootVersion = '2.7.4'
-        }
 
         java {
             sourceCompatibility '1.8' // source version
@@ -53,6 +49,9 @@ subprojects {
         dependencies {
             // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
             testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
+            
+            // https://mvnrepository.com/artifact/org.projectlombok/lombok
+            compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
         }
     }
 }

@@ -4,6 +4,6 @@
 # Ignore Gradle build output directory
 build
 
+# eclipse
 /.settings/
 /.project
-/.classpath

@@ -8,14 +8,14 @@ version = '0.0.1-SNAPSHOT'
 
 /*
  * hierarchy
- * ─ [directory]gradle-hierarchy-architype
- *   └ [directory]multiple-project
- *     ├ [directory]applications
- *     │ └ [app]hello
- *     ├ [directory]modules
- *     │ └ [lib]core
- *     └ [directory]services
- *       └ [lib]share
+ * ─ [directory  ]gradle-hierarchy-architype
+ *   └ [directory  ]multiple-project
+ *     ├ [directory  ]applications
+ *     │ └ [app        ]hello
+ *     ├ [directory  ]modules
+ *     │ └ [lib        ]core
+ *     └ [directory  ]businesses
+ *       └ [lib        ]greeting
  * 
  */
 allprojects {
@@ -23,7 +23,7 @@ allprojects {
         it.name != 'multiple-project' &&
         it.name != 'applications' &&
         it.name != 'modules' &&
-        it.name != 'services') {
+        it.name != 'businesses') {
 
         apply plugin: 'java'
         apply plugin: 'org.springframework.boot'
@@ -48,7 +48,7 @@ subprojects {
         it.name != 'multiple-project' &&
         it.name != 'applications' &&
         it.name != 'modules' &&
-        it.name != 'services') {
+        it.name != 'businesses') {
 
         dependencies {
             // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test

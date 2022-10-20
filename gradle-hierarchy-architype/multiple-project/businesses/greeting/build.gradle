@@ -1,0 +1,13 @@
+bootJar {
+    enabled false
+    //archiveBaseName 'greeting'
+    //version '0.0.1'
+}
+
+jar {
+    enabled true
+}
+
+dependencies {
+
+}

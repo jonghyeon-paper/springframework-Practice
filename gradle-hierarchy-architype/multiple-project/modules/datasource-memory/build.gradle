@@ -1,0 +1,20 @@
+bootJar {
+    enabled false
+    //archiveBaseName 'memory'
+    //version '0.0.1'
+}
+
+jar {
+    enabled true
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    implementation group: 'org.springframework', name: 'spring-context', version: springVersion
+    
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+    
+    // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
+    runtimeOnly group: 'org.hsqldb', name: 'hsqldb', version: '2.7.1'
+}

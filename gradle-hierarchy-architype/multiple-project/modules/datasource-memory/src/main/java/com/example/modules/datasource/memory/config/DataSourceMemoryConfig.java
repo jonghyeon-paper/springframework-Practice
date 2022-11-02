@@ -11,7 +11,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 /**
  * DataSourceMemoryConfig
  * 
- * created by _sCream on 2022/11/01
+ * created by jonghyeon on 2022/11/01
  */
 @Configuration
 public class DataSourceMemoryConfig {

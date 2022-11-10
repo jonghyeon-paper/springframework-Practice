@@ -1,5 +1,9 @@
 rootProject.name = 'gradle-hierarchy-architype'
 
 include 'multiple-project:applications:hello'
-include 'multiple-project:modules:core'
+
+include 'multiple-project:cores:hello-persistence'
+
 include 'multiple-project:businesses:greeting'
+
+include 'multiple-project:modules:datasource-memory'

@@ -9,6 +9,6 @@ import com.example.cores.hello.jpa.entity.Sample;
  * 
  * created by jonghyeon on 2022/11/01
  */
-public interface SampleRepository extends JpaRepository<Sample, String> {
+public interface SampleRepository extends JpaRepository<Sample, Integer> {
 
 }

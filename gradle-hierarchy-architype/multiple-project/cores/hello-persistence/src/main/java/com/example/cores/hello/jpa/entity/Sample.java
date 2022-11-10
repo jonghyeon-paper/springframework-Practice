@@ -15,7 +15,16 @@ import lombok.Data;
 public class Sample {
 
     @Id
-    private String sampleId;
+    private Integer sampleId;
+    private String nickname;
     private String name;
     private Boolean enabled;
+
+    /**
+     * delete
+     * <br>The delete command does not delete the data, it only changes the state.
+     */
+    public void delete() {
+        enabled = false;
+    }
 }

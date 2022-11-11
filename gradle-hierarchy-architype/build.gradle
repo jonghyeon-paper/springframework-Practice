@@ -6,26 +6,12 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
-/*
- * hierarchy
- * ─ [directory  ]gradle-hierarchy-architype
- *   └ [directory  ]multiple-project
- *     ├ [directory  ]applications
- *     │ └ [app        ]hello
- *     ├ [directory  ]modules
- *     │ └ [lib        ]core
- *     └ [directory  ]businesses
- *       └ [lib        ]greeting
- * 
- */
-allprojects {
-    if (it.name != 'gradle-hierarchy-architype' &&
-        it.name != 'multiple-project' &&
-        it.name != 'applications' &&
-        it.name != 'cores' &&
-        it.name != 'businesses' &&
-        it.name != 'modules') {
+ext {
+    nonProjects = ['gradle-hierarchy-architype', 'multiple-project', 'applications', 'cores', 'businesses', 'modules']
+}
 
+allprojects {
+    if (!nonProjects.contains(it.name)) {
         apply plugin: 'java'
         apply plugin: 'org.springframework.boot'
 
@@ -41,13 +27,7 @@ allprojects {
 }
 
 subprojects {
-    if (it.name != 'gradle-hierarchy-architype' &&
-        it.name != 'multiple-project' &&
-        it.name != 'applications' &&
-        it.name != 'cores' &&
-        it.name != 'businesses' &&
-        it.name != 'modules') {
-
+    if (!nonProjects.contains(it.name)) {
         dependencies {
             // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
             testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion

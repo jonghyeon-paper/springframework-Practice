@@ -1,5 +1,6 @@
 package com.example.applications.hello.service;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,10 +9,12 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.applications.hello.model.GreetingResponse;
 import com.example.applications.hello.model.SampleConditionParameter;
 import com.example.applications.hello.model.SamplePatch;
 import com.example.applications.hello.model.SampleRequest;
 import com.example.applications.hello.model.SampleResponse;
+import com.example.businesses.greeting.service.GreetingService;
 import com.example.cores.hello.jpa.entity.Sample;
 import com.example.cores.hello.jpa.repository.SampleRepository;
 
@@ -109,5 +112,14 @@ public class HelloService {
         Sample findSampleData = this.retieveSample(sampleId);
         findSampleData.delete();
         // sampleRepository.save(findSampleData); // This command is not required. It is automatically patched when the transaction ends.
+    }
+    
+    private final GreetingService greetingService;
+
+    public GreetingResponse getHelloMessage() {
+        GreetingResponse responseData = new GreetingResponse();
+        responseData.setHelloMessage(greetingService.getGreetingMessage("hello", "hello"));
+        responseData.setReturnTime(ZonedDateTime.now());
+        return responseData;
     }
 }

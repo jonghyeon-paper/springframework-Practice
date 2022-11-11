@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.applications.hello.model.GreetingResponse;
 import com.example.applications.hello.model.SampleConditionParameter;
 import com.example.applications.hello.model.SamplePatch;
 import com.example.applications.hello.model.SampleRequest;
@@ -93,5 +94,15 @@ public class HelloController {
     @ResponseBody
     public void removeSample(@PathVariable Integer sampleId) {
         helloService.removeGreeting(sampleId);
+    }
+
+    /**
+     * getHelloMessage
+     * 
+     * @return
+     */
+    @GetMapping("/hello")
+    public GreetingResponse getHelloMessage() {
+        return helloService.getHelloMessage();
     }
 }

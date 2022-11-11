@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloApplication {
 
     public static void main(String[] args) {
+        System.setProperty("spring.config.name", "hello");
         SpringApplication.run(HelloApplication.class, args);
     }
 }

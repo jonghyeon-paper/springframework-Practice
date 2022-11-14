@@ -12,7 +12,7 @@ ext {
 
 allprojects {
     if (!nonProjects.contains(it.name)) {
-        apply plugin: 'java'
+        apply plugin: 'java-library'
         apply plugin: 'org.springframework.boot'
 
         java {
@@ -33,7 +33,8 @@ subprojects {
             testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
             
             // https://mvnrepository.com/artifact/org.projectlombok/lombok
-            compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+            compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+            annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
         }
     }
 }

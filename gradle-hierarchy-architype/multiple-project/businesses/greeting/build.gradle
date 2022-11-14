@@ -10,5 +10,5 @@ jar {
 
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-context
-    implementation group: 'org.springframework', name: 'spring-context', version: springVersion
+    api group: 'org.springframework', name: 'spring-context', version: springVersion
 }

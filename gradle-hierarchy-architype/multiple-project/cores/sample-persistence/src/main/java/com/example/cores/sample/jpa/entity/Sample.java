@@ -1,4 +1,4 @@
-package com.example.cores.hello.jpa.entity;
+package com.example.cores.sample.jpa.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

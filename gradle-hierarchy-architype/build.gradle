@@ -12,6 +12,12 @@ ext {
 
 allprojects {
     if (!nonProjects.contains(it.name)) {
+        // something todo..
+    }
+}
+
+subprojects {
+    if (!nonProjects.contains(it.name)) {
         apply plugin: 'java-library'
         apply plugin: 'org.springframework.boot'
 
@@ -23,11 +29,7 @@ allprojects {
         repositories {
             mavenCentral()
         }
-    }
-}
 
-subprojects {
-    if (!nonProjects.contains(it.name)) {
         dependencies {
             // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
             testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion

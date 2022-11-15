@@ -3,7 +3,7 @@ package com.example.applications.sample.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import com.example.cores.hello.CoresHelloPersistenceScanner;
+import com.example.cores.sample.CoresSamplePersistenceScanner;
 
 /**
  * ReferenceConfig
@@ -12,7 +12,7 @@ import com.example.cores.hello.CoresHelloPersistenceScanner;
  */
 @Configuration
 @Import(value = {
-        CoresHelloPersistenceScanner.class
+        CoresSamplePersistenceScanner.class
 })
 public class ReferenceConfig {
 

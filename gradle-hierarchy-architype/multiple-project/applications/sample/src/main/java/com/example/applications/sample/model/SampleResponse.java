@@ -2,7 +2,7 @@ package com.example.applications.sample.model;
 
 import java.time.ZonedDateTime;
 
-import com.example.cores.hello.jpa.entity.Sample;
+import com.example.cores.sample.jpa.entity.Sample;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

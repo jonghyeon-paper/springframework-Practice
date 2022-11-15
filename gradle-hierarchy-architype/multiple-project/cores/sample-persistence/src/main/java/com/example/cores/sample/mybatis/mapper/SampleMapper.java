@@ -1,4 +1,4 @@
-package com.example.cores.hello.mybatis.mapper;
+package com.example.cores.sample.mybatis.mapper;
 
 import java.util.List;
 import java.util.Map;

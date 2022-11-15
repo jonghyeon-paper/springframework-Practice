@@ -1,8 +1,8 @@
-package com.example.cores.hello.jpa.repository;
+package com.example.cores.sample.jpa.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.cores.hello.jpa.entity.Sample;
+import com.example.cores.sample.jpa.entity.Sample;
 
 /**
  * SampleRepository

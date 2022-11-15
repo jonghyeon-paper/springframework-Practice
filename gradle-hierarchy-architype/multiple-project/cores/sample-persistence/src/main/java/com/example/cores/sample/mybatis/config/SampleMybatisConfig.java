@@ -1,4 +1,4 @@
-package com.example.cores.hello.mybatis.config;
+package com.example.cores.sample.mybatis.config;
 
 import java.util.Properties;
 
@@ -13,20 +13,20 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.cores.hello.jpa.config.HelloJpaConfig;
+import com.example.cores.sample.jpa.config.SampleJpaConfig;
 
 import lombok.RequiredArgsConstructor;
 
 /**
- * HelloMybatisConfig
- * <br>Transactions are handled in {@link HelloJpaConfig#transactionManager(org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean)}.
+ * SampleMybatisConfig
+ * <br>Transactions are handled in {@link SampleJpaConfig#transactionManager(org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean)}.
  *
  * created by jonghyeon on 2022/11/01
  */
 @Configuration
 @MapperScan(basePackages = "com.example.cores.hello.mybatis.mapper")
 @RequiredArgsConstructor
-public class HelloMybatisConfig {
+public class SampleMybatisConfig {
 
     private final ApplicationContext applicationContext;
 

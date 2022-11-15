@@ -1,4 +1,4 @@
-package com.example.cores.hello.jpa.config;
+package com.example.cores.sample.jpa.config;
 
 import java.util.Properties;
 
@@ -13,16 +13,16 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import com.example.cores.hello.CoresHelloPersistenceMarker;
+import com.example.cores.sample.CoresSamplePersistenceMarker;
 
 /**
- * HelloJpaConfig
+ * SampleJpaConfig
  *
  * created by jonghyeon on 2022/11/01
  */
 @Configuration
-@EnableJpaRepositories(basePackageClasses = CoresHelloPersistenceMarker.class, entityManagerFactoryRef = "localContainerEntityManagerFactoryBean")
-public class HelloJpaConfig {
+@EnableJpaRepositories(basePackageClasses = CoresSamplePersistenceMarker.class, entityManagerFactoryRef = "localContainerEntityManagerFactoryBean")
+public class SampleJpaConfig {
 
     /**
      * localContainerEntityManagerFactoryBean
@@ -34,7 +34,7 @@ public class HelloJpaConfig {
     public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setPackagesToScan(new String[] { "com.example.cores.hello.jpa" });
+        entityManagerFactoryBean.setPackagesToScan(new String[] { "com.example.cores.sample.jpa" });
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManagerFactoryBean.setJpaProperties(hibernateProperties());
         return entityManagerFactoryBean;

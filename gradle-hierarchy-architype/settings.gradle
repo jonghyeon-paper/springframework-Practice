@@ -5,6 +5,6 @@ include 'multiple-project:applications:sample'
 
 include 'multiple-project:businesses:greeting'
 
-include 'multiple-project:cores:hello-persistence'
+include 'multiple-project:cores:sample-persistence'
 
 include 'multiple-project:modules:datasource-memory'

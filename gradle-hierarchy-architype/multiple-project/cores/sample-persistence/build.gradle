@@ -1,6 +1,6 @@
 bootJar {
     enabled false
-    //archiveBaseName 'hello-persistence'
+    //archiveBaseName 'sample-persistence'
     //version '0.0.1'
 }
 

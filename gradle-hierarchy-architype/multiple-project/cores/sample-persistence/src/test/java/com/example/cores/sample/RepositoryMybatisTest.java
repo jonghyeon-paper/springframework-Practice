@@ -1,26 +1,21 @@
-package com.example.applications.hello;
+package com.example.cores.sample;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.cores.hello.mybatis.mapper.SampleMapper;
+import com.example.cores.sample.mybatis.mapper.SampleMapper;
 
-/**
- * DatabaseMybatisWorkingTest
- * 
- * created by jonghyeon on 2022/11/01
- */
-@SpringBootTest
-@AutoConfigureMockMvc
-public class DatabaseMybatisWorkingTest {
+@SpringBootTest(classes = { CoresSamplePersistenceScanner.class })
+@SpringBootConfiguration
+public class RepositoryMybatisTest {
 
     @Autowired
     private SampleMapper sampleMapper;
 
     @Test
-    public void doTest() {
+    public void doMybatisTest() {
         sampleMapper.selectSampleUseAnnotation().forEach(System.out::println);
         sampleMapper.selectSampleUseXml().forEach(System.out::println);
     }

@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.example.cores.sample.jpa.config.SampleJpaConfig;
+import com.example.cores.sample.mybatis.mapper.MybatisMapperLocationMarker;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,7 +25,7 @@ import lombok.RequiredArgsConstructor;
  * created by jonghyeon on 2022/11/01
  */
 @Configuration
-@MapperScan(basePackages = "com.example.cores.hello.mybatis.mapper")
+@MapperScan(basePackageClasses = { MybatisMapperLocationMarker.class })
 @RequiredArgsConstructor
 public class SampleMybatisConfig {
 

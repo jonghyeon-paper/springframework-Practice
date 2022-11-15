@@ -1,4 +1,4 @@
-package com.example.modules.datasource.memory.config;
+package com.example.modules.datasource.sample.config;
 
 import javax.sql.DataSource;
 
@@ -9,22 +9,22 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 /**
- * DataSourceMemoryConfig
+ * DataSourceSampleConfig
  * 
  * created by jonghyeon on 2022/11/01
  */
 @Configuration
-public class DataSourceMemoryConfig {
+public class DataSourceSampleConfig {
 
     /**
      * dataSourceMemory
      * 
      * @return
      */
-    @Bean("dataSourceMemory")
-    public DataSource dataSourceMemory() {
+    @Bean("dataSourceSample")
+    public DataSource dataSourceSample() {
         EmbeddedDatabase database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL)
-                .addScripts("classpath:hsqldb/create-db.sql", "classpath:hsqldb/insert-db.sql")
+                .addScripts("classpath:hsqldb/ddl-create.sql", "classpath:hsqldb/dml-insert.sql")
                 .build();
         return database;
     }

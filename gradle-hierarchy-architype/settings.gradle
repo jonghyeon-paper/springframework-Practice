@@ -7,4 +7,4 @@ include 'multiple-project:businesses:greeting'
 
 include 'multiple-project:cores:sample-persistence'
 
-include 'multiple-project:modules:datasource-memory'
+include 'multiple-project:modules:datasource-sample'

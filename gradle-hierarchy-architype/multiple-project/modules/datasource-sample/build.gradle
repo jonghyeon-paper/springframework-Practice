@@ -1,6 +1,6 @@
 bootJar {
     enabled false
-    //archiveBaseName 'memory'
+    //archiveBaseName 'datasource-sample'
     //version '0.0.1'
 }
 

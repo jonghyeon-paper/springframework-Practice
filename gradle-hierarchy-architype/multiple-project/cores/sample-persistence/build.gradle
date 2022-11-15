@@ -9,7 +9,7 @@ jar {
 }
 
 dependencies {
-    implementation project(':multiple-project:modules:datasource-memory')
+    implementation project(':multiple-project:modules:datasource-sample')
     
     /** spring */
     // https://mvnrepository.com/artifact/org.springframework/spring-context

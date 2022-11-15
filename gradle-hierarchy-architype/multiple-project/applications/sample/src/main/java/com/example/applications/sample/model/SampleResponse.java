@@ -18,14 +18,14 @@ public class SampleResponse {
 
     public SampleResponse(Sample sampleData) {
         this.sampleId = sampleData.getSampleId();
-        this.nickname = sampleData.getNickname();
         this.name = sampleData.getName();
+        this.altername = sampleData.getAltername();
         this.enabled = sampleData.getEnabled();
     }
 
     private Integer sampleId;
-    private String nickname;
     private String name;
+    private String altername;
     private Boolean enabled;
 
     // extra variable

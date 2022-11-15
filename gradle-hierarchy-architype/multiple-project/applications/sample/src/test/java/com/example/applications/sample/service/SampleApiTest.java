@@ -35,7 +35,7 @@ public class SampleApiTest {
     @Test
     public void readListTest() {
         SampleCondition condition = new SampleCondition();
-        condition.setName("sam");
+        condition.setName("tea");
         List<SampleResponse> sampleList = helloService.retrieveSampleList(condition);
         System.out.println("read list");
         sampleList.forEach(System.out::println);
@@ -45,8 +45,8 @@ public class SampleApiTest {
     @Transactional
     public void addTest() {
         SampleRequest requestData = new SampleRequest();
-        requestData.setNickname("abc");
-        requestData.setName("efg");
+        requestData.setName("bubble");
+        requestData.setAltername("bubble2");
         SampleResponse newData = helloService.addGreeting(requestData);
         System.out.println("new data");
         System.out.println(newData);

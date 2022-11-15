@@ -62,7 +62,7 @@ public class SampleService {
      */
     public List<SampleResponse> retrieveSampleList(SampleCondition conditionData) {
         Sample condition = new Sample();
-        BeanUtils.copyProperties(condition, conditionData);
+        BeanUtils.copyProperties(conditionData, condition);
         List<Sample> findSampleList = sampleRepository.findAll(Example.of(condition));
         return findSampleList.stream().map(item -> {
             return new SampleResponse(item);

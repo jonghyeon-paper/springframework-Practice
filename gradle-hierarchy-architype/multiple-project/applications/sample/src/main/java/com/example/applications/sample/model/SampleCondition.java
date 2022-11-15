@@ -14,8 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 public class SampleCondition implements ParameterValidation {
 
-    private String nickname;
     private String name;
+    private String altername;
     private Boolean enabled;
 
     /* (non-Javadoc)
@@ -23,7 +23,7 @@ public class SampleCondition implements ParameterValidation {
      */
     @Override
     public boolean isValidParameter() {
-        if (nickname == null && name == null && enabled == null) {
+        if (name == null && altername == null && enabled == null) {
             log.error("All parameters are null. At least one parameter must be non-null.");
             return false;
         }

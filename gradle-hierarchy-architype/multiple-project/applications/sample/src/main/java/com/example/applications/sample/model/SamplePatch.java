@@ -14,20 +14,20 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 public class SamplePatch implements ParameterValidation {
 
-    private String nickname;
     private String name;
+    private String altername;
 
     /* (non-Javadoc)
      * @see com.example.applications.sample.model.ParameterValidation#isValidParameter()
      */
     @Override
     public boolean isValidParameter() {
-        if (nickname == null) {
-            log.error("nickname is null.");
-            return false;
-        }
         if (name == null) {
             log.error("name is null.");
+            return false;
+        }
+        if (altername == null) {
+            log.error("altername is null.");
             return false;
         }
         return true;

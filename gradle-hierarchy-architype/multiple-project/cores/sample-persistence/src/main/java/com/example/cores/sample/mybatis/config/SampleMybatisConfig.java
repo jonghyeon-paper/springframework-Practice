@@ -39,7 +39,7 @@ public class SampleMybatisConfig {
      * @throws Exception
      */
     @Bean
-    public SqlSessionFactory sqlSessionFactory(@Qualifier("dataSourceMemory") DataSource dataSource) throws Exception {
+    public SqlSessionFactory sqlSessionFactory(@Qualifier("dataSourceSample") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setConfigurationProperties(mybatisProperties());

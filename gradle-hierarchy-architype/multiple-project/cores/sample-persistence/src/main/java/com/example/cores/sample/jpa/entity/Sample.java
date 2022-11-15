@@ -19,8 +19,8 @@ public class Sample {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer sampleId;
-    private String nickname;
     private String name;
+    private String altername;
     private Boolean enabled;
 
     /**

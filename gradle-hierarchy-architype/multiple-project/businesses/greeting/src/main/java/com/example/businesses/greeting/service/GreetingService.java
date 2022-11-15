@@ -18,9 +18,9 @@ public class GreetingService {
      * @return
      */
     public String getGreetingMessage(String greetingMessage, String appName) {
-        return new StringBuilder().append("'").append(greetingMessage).append("!'").append("\n")
-                .append("this message return at greeting service.").append("\n")
-                .append("this message called by hello app.")
+        return new StringBuilder().append("'").append(greetingMessage).append("!'\n")
+                .append("this message return at greeting service.\n")
+                .append("this message called by '").append(appName).append("' app.\n")
                 .toString();
     }
 }

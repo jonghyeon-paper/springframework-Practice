@@ -9,7 +9,6 @@ jar {
 }
 
 dependencies {
-    implementation project(':multiple-project:cores:hello-persistence')
     implementation project(':multiple-project:businesses:greeting')
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web

@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 import com.example.businesses.greeting.BusinessGreetingScanner;
-import com.example.cores.hello.CoresHelloPersistenceScanner;
 
 /**
  * ReferenceConfig
@@ -13,8 +12,7 @@ import com.example.cores.hello.CoresHelloPersistenceScanner;
  */
 @Configuration
 @Import(value = {
-        BusinessGreetingScanner.class,
-        CoresHelloPersistenceScanner.class
+        BusinessGreetingScanner.class
 })
 public class ReferenceConfig {
 

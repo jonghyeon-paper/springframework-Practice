@@ -10,10 +10,10 @@ import com.example.businesses.greeting.BusinessGreetingScanner;
  * 
  * created by jonghyeon on 2022/11/01
  */
-@Configuration
 @Import(value = {
         BusinessGreetingScanner.class
 })
+@Configuration
 public class ReferenceConfig {
 
 }

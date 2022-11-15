@@ -10,10 +10,10 @@ import com.example.cores.sample.CoresSamplePersistenceScanner;
  * 
  * created by jonghyeon on 2022/11/14
  */
-@Configuration
 @Import(value = {
         CoresSamplePersistenceScanner.class
 })
+@Configuration
 public class ReferenceConfig {
 
 }

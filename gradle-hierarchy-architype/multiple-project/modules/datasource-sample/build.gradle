@@ -1,11 +1,11 @@
 bootJar {
     enabled false
-    //archiveBaseName 'datasource-sample'
-    //version '0.0.1'
 }
 
 jar {
     enabled true
+    archiveBaseName = 'datasource-sample'
+    archiveVersion = '0.0.1-SNAPSHOT'
 }
 
 dependencies {

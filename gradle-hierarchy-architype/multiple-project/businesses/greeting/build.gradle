@@ -1,11 +1,11 @@
 bootJar {
     enabled false
-    //archiveBaseName 'greeting'
-    //version '0.0.1'
 }
 
 jar {
     enabled true
+    archiveBaseName = 'greeting'
+    archiveVersion = '0.0.1-SNAPSHOT'
 }
 
 dependencies {

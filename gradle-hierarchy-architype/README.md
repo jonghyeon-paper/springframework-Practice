@@ -19,7 +19,7 @@ project hierarchy
 package hierarchy 
 <pre>
 ─ com   
-  └ example   
+  └ example
     │ /* com.example.applicaton.{application-name}.{...}.{...} */
     ├ application
     │ ├ hello
@@ -41,4 +41,20 @@ package hierarchy
     └ modules
       └ datasource
         └ sample
+</pre>
+
+application dependencies
+<pre>
+┌ hello ────────┐
+│ ┌ greeting ─┐ │
+│ │           │ │
+│ └───────────┘ │
+└───────────────┘
+┌ sample ────────────────────┐
+│ ┌ sample-persistence ────┐ │
+│ │ ┌ datasource-sample ─┐ │ │
+│ │ │                    │ │ │
+│ │ └────────────────────┘ │ │
+│ └────────────────────────┘ │
+└────────────────────────────┘
 </pre>

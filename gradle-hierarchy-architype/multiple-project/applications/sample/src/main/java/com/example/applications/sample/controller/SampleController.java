@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,7 +50,7 @@ public class SampleController {
      */
     @GetMapping("/sample")
     @ResponseBody
-    public List<SampleResponse> retrieveSampleList(@RequestParam SampleCondition conditionData) {
+    public List<SampleResponse> retrieveSampleList(SampleCondition conditionData) {
         if (!conditionData.isValidParameter()) {
             throw new RuntimeException("parameter invalid.");
         }

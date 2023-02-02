@@ -13,7 +13,8 @@ project hierarchy
     │ ├ sample-persistence
     │ └ sample-querydsl-persistence
     └ modules
-      └ datasource-sample
+      ├ datasource-sample
+      └ messagesource-sample
 </pre>
 
 package hierarchy 
@@ -39,7 +40,9 @@ package hierarchy
     │
     │ /* com.example.modules.{module-name}.{...}.{...} */
     └ modules
-      └ datasource
+      ├ datasource
+      │ └ sample
+      └ messagesource
         └ sample
 </pre>
 

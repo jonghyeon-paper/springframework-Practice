@@ -1,0 +1,16 @@
+bootJar {
+    enabled true
+    archiveBaseName = 'alpha'
+    archiveVersion = '0.0.1-SNAPSHOT'
+}
+
+jar {
+    enabled false
+}
+
+dependencies {
+    implementation project(':multiple-project:cores:sample-querydsl-persistence')
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    api group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+}

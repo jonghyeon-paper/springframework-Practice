@@ -2,6 +2,7 @@ rootProject.name = 'gradle-hierarchy-architype'
 
 include 'multiple-project:applications:hello'
 include 'multiple-project:applications:sample'
+include 'multiple-project:applications:alpha'
 
 include 'multiple-project:businesses:greeting'
 

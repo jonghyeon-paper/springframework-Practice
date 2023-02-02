@@ -1,0 +1,14 @@
+bootJar {
+    enabled false
+}
+
+jar {
+    enabled true
+    archiveBaseName = 'messagesource-sample'
+    archiveVersion = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    api group: 'org.springframework', name: 'spring-context', version: springVersion
+}

@@ -9,3 +9,4 @@ include 'multiple-project:cores:sample-persistence'
 include 'multiple-project:cores:sample-querydsl-persistence'
 
 include 'multiple-project:modules:datasource-sample'
+include 'multiple-project:modules:messagesource-sample'

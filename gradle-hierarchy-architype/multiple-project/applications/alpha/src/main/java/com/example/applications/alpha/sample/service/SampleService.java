@@ -12,8 +12,8 @@ import com.example.applications.alpha.sample.model.SampleCondition;
 import com.example.applications.alpha.sample.model.SamplePatch;
 import com.example.applications.alpha.sample.model.SampleRequest;
 import com.example.applications.alpha.sample.model.SampleResponse;
-import com.example.cores.sample.jpa.entity.Sample;
-import com.example.cores.sample.jpa.repository.SampleRepository;
+import com.example.cores.alpha.jpa.entity.Sample;
+import com.example.cores.alpha.jpa.repository.SampleRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

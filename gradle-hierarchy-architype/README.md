@@ -6,12 +6,14 @@ project hierarchy
   └ multiple-project
     ├ applications
     │ ├ hello
-    │ └ sample
+    │ ├ sample
+    │ └ alpha
     ├ businesses
     │ └ greeting
     ├ cores
     │ ├ sample-persistence
-    │ └ sample-querydsl-persistence
+    │ ├ sample-querydsl-persistence
+    │ └ alpha-persistence
     └ modules
       ├ datasource-sample
       └ messagesource-sample
@@ -24,7 +26,8 @@ package hierarchy
     │ /* com.example.applicaton.{application-name}.{...}.{...} */
     ├ application
     │ ├ hello
-    │ └ sample
+    │ ├ sample
+    │ └ alpha
     │
     │ /* 'business' should work independently */
     │ /* com.example.businesses.{business-name}.{...}.{...} */
@@ -34,7 +37,10 @@ package hierarchy
     │ /* 'core' is application dependent */
     │ /* com.example.cores.{application-name}.{module-name}.{...}.{...} */
     ├ cores
-    │ └ sample
+    │ ├ sample
+    │ │ ├ jpa
+    │ │ └ mybatis
+    │ └ alpha
     │   ├ jpa
     │   └ mybatis
     │
@@ -60,4 +66,11 @@ application dependencies
 │ │ └────────────────────┘          │ │
 │ └─────────────────────────────────┘ │
 └─────────────────────────────────────┘
+┌ alpha ─────────────────────┐
+│ ┌ alpha-persistence ─────┐ │
+│ │ ┌ datasource-sample ─┐ │ │
+│ │ │                    │ │ │
+│ │ └────────────────────┘ │ │
+│ └────────────────────────┘ │
+└────────────────────────────┘
 </pre>

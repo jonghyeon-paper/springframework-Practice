@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.applications.alpha.annotation.VersionPrefixRequestMapping;
 import com.example.applications.alpha.sample.model.SampleCondition;
 import com.example.applications.alpha.sample.model.SamplePatch;
 import com.example.applications.alpha.sample.model.SampleRequest;
@@ -25,6 +26,7 @@ import lombok.RequiredArgsConstructor;
  * created by jonghyeon on 2022/11/14
  */
 @RestController
+@VersionPrefixRequestMapping
 @RequiredArgsConstructor
 public class SampleController {
 

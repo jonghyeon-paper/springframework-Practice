@@ -69,7 +69,7 @@ public class SampleController {
     @PostMapping("/sample")
     @ResponseBody
     public Object addSample(@RequestBody SampleRequest requestData) {
-        return sampleService.addGreeting(requestData);
+        return sampleService.addSample(requestData);
     }
 
     /**
@@ -82,7 +82,7 @@ public class SampleController {
     @PutMapping("/sample/{sampleId}")
     @ResponseBody
     public Object modifySample(@PathVariable Integer sampleId, @RequestBody SamplePatch patchData) {
-        return sampleService.modifyGreeting(sampleId, patchData);
+        return sampleService.modifySample(sampleId, patchData);
     }
 
     /**
@@ -93,6 +93,6 @@ public class SampleController {
     @DeleteMapping("/sample/{sampleId}")
     @ResponseBody
     public void removeSample(@PathVariable Integer sampleId) {
-        sampleService.removeGreeting(sampleId);
+        sampleService.removeSample(sampleId);
     }
 }

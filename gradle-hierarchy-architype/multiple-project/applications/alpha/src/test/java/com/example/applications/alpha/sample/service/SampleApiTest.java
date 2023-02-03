@@ -47,7 +47,7 @@ public class SampleApiTest {
         SampleRequest requestData = new SampleRequest();
         requestData.setName("bubble");
         requestData.setAltername("bubble2");
-        SampleResponse newData = sampleService.addGreeting(requestData);
+        SampleResponse newData = sampleService.addSample(requestData);
         System.out.println("new data");
         System.out.println(newData);
     }
@@ -58,7 +58,7 @@ public class SampleApiTest {
         Integer promaryKey = 2;
         SamplePatch patchData = new SamplePatch();
         patchData.setName("000000");
-        SampleResponse modifiedData = sampleService.modifyGreeting(promaryKey, patchData);
+        SampleResponse modifiedData = sampleService.modifySample(promaryKey, patchData);
         System.out.println("patch data");
         System.out.println(modifiedData);
     }
@@ -67,6 +67,6 @@ public class SampleApiTest {
     @Transactional
     public void removeTest() {
         Integer promaryKey = 2;
-        sampleService.removeGreeting(promaryKey);
+        sampleService.removeSample(promaryKey);
     }
 }

@@ -70,13 +70,13 @@ public class SampleService {
     }
 
     /**
-     * addGreeting
+     * addSample
      * 
      * @param requestData
      * @return
      */
     @Transactional
-    public SampleResponse addGreeting(SampleRequest requestData) {
+    public SampleResponse addSample(SampleRequest requestData) {
         Sample newData = new Sample();
         BeanUtils.copyProperties(requestData, newData);
         newData.setEnabled(true);
@@ -85,14 +85,14 @@ public class SampleService {
     }
 
     /**
-     * modifyGreeting
+     * modifySample
      * 
      * @param sampleId
      * @param patchData
      * @return
      */
     @Transactional
-    public SampleResponse modifyGreeting(Integer sampleId, SamplePatch patchData) {
+    public SampleResponse modifySample(Integer sampleId, SamplePatch patchData) {
         Sample foundData = this.retieveSample(sampleId);
         BeanUtils.copyProperties(patchData, foundData);
         // sampleRepository.save(findSampleData); // This command is not required. It is automatically patched when the transaction ends.
@@ -100,12 +100,12 @@ public class SampleService {
     }
 
     /**
-     * removeGreeting
+     * removeSample
      * 
      * @param sampleId
      */
     @Transactional
-    public void removeGreeting(Integer sampleId) {
+    public void removeSample(Integer sampleId) {
         Sample findSampleData = this.retieveSample(sampleId);
         findSampleData.delete();
         // sampleRepository.save(findSampleData); // This command is not required. It is automatically patched when the transaction ends.

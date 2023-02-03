@@ -1,0 +1,17 @@
+bootJar {
+    enabled false
+}
+
+jar {
+    enabled true
+    archiveBaseName = 'security-token'
+    archiveVersion = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+    api group: 'org.springframework.security', name: 'spring-security-web', version: springSecurityVersion
+    
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+    api group: 'org.springframework.security', name: 'spring-security-config', version: springSecurityVersion
+}

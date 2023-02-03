@@ -11,3 +11,4 @@ include 'multiple-project:cores:beta-persistence'
 
 include 'multiple-project:modules:datasource-sample'
 include 'multiple-project:modules:messagesource-sample'
+include 'multiple-project:modules:security-token'

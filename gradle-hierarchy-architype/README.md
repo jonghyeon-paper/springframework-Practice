@@ -1,19 +1,25 @@
 Multiple project architype
 
+project descrption
+* hello : example
+* alpha : example
+* beta : example
+* alpha-persistence : jpa + mybatis
+* beta-persistence : jpa + querydsl
+
 project hierarchy 
 <pre>
 ─ gradle-hierarchy-architype
   └ multiple-project
     ├ applications
     │ ├ hello
-    │ ├ sample
-    │ └ alpha
+    │ ├ alpha
+    │ └ beta
     ├ businesses
     │ └ greeting
     ├ cores
-    │ ├ sample-persistence
-    │ ├ sample-querydsl-persistence
-    │ └ alpha-persistence
+    │ ├ alpha-persistence
+    │ └ beta-persistence
     └ modules
       ├ datasource-sample
       └ messagesource-sample
@@ -26,8 +32,8 @@ package hierarchy
     │ /* com.example.applicaton.{application-name}.{...}.{...} */
     ├ application
     │ ├ hello
-    │ ├ sample
-    │ └ alpha
+    │ ├ alpha
+    │ └ beta
     │
     │ /* 'business' should work independently */
     │ /* com.example.businesses.{business-name}.{...}.{...} */
@@ -37,12 +43,11 @@ package hierarchy
     │ /* 'core' is application dependent */
     │ /* com.example.cores.{application-name}.{module-name}.{...}.{...} */
     ├ cores
-    │ ├ sample
+    │ ├ alpha
     │ │ ├ jpa
     │ │ └ mybatis
-    │ └ alpha
-    │   ├ jpa
-    │   └ mybatis
+    │ └ beta
+    │   └ jpa
     │
     │ /* com.example.modules.{module-name}.{...}.{...} */
     └ modules
@@ -59,15 +64,15 @@ application dependencies
 │ │           │ │
 │ └───────────┘ │
 └───────────────┘
-┌ sample ─────────────────────────────┐
-│ ┌ sample-querydsl-persistence ────┐ │
-│ │ ┌ datasource-sample ─┐          │ │
-│ │ │                    │          │ │
-│ │ └────────────────────┘          │ │
-│ └─────────────────────────────────┘ │
-└─────────────────────────────────────┘
 ┌ alpha ─────────────────────┐
 │ ┌ alpha-persistence ─────┐ │
+│ │ ┌ datasource-sample ─┐ │ │
+│ │ │                    │ │ │
+│ │ └────────────────────┘ │ │
+│ └────────────────────────┘ │
+└────────────────────────────┘
+┌ beta ──────────────────────┐
+│ ┌ beta-persistence ──────┐ │
 │ │ ┌ datasource-sample ─┐ │ │
 │ │ │                    │ │ │
 │ │ └────────────────────┘ │ │

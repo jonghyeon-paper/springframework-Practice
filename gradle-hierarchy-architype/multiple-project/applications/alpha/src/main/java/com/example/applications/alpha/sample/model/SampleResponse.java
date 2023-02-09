@@ -29,6 +29,6 @@ public class SampleResponse {
     private Boolean enabled;
 
     // extra variable
-    private String returnMessage;
-    private ZonedDateTime returnTime;
+    private String returnMessage = "none";
+    private ZonedDateTime returnTime = ZonedDateTime.now();
 }

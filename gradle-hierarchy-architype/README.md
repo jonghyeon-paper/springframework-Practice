@@ -1,11 +1,20 @@
 Multiple project architype
 
-project descrption
+project description
 * hello : example
 * alpha : example
+  * WAS config
+  * version prefix apply to URI path
+  * datetime format config of object-mapper 
 * beta : example
-* alpha-persistence : jpa + mybatis
-* beta-persistence : jpa + querydsl
+  * WAS config
+* alpha-persistence : example
+  * jpa
+  * mybatis
+* beta-persistence : example
+  * jpa
+  * querydsl
+
 
 project hierarchy 
 <pre>

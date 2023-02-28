@@ -17,8 +17,9 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 public class WebConfig implements WebMvcConfigurer {
 
     // if you need MVC config settings, add them here
-    
+
     /**
+     * customObjectMapper:
      * <ul>
      * <li>refer to {@link org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration}.
      * </ul>
@@ -26,7 +27,7 @@ public class WebConfig implements WebMvcConfigurer {
      * @return
      */
     @Bean
-    public ObjectMapper customeObjectMapper(Jackson2ObjectMapperBuilder builder) {
+    public ObjectMapper customObjectMapper(Jackson2ObjectMapperBuilder builder) {
         return builder.createXmlMapper(false)
                 .modulesToInstall(new JavaTimeModule())
                 .build();

@@ -1,0 +1,17 @@
+bootJar {
+    enabled false
+}
+
+jar {
+    enabled true
+    archiveBaseName = 'openapi'
+    archiveVersion = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    api group: 'org.springframework', name: 'spring-context', version: springVersion
+    
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+    api group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.7.0'
+}

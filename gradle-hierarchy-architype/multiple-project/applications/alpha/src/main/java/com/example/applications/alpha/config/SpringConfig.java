@@ -25,7 +25,7 @@ public class SpringConfig {
     @Bean
     public PropertySourcesPlaceholderConfigurer properties() throws IOException {
         PropertySourcesPlaceholderConfigurer pspc = new PropertySourcesPlaceholderConfigurer();
-        Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath:*.yml");
+        Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath:*.properties");
         pspc.setLocations(resources);
         pspc.setIgnoreUnresolvablePlaceholders(true);
         return pspc;

@@ -32,7 +32,7 @@ public class GammaJpaConfig {
      * @return
      */
     @Bean
-    public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean(@Qualifier("dataSourceSample") DataSource dataSource) {
+    public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean(@Qualifier("dataSourceSecurity") DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
         entityManagerFactoryBean.setPackagesToScan(new String[] { "com.example.cores.gamma.jpa" });

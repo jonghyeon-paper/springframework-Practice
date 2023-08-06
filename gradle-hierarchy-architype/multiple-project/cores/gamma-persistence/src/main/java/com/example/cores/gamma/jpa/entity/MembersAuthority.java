@@ -8,26 +8,18 @@ import javax.persistence.Id;
 import lombok.Data;
 
 /**
- * Sample
+ * MembersAuthority
  * 
  * @author _sCream
+ *
  */
 @Data
 @Entity
-public class Sample {
+public class MembersAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer sampleId;
-    private String name;
-    private String altername;
-    private Boolean enabled;
-
-    /**
-     * delete <br>
-     * The delete command does not delete the data, it only changes the state.
-     */
-    public void delete() {
-        enabled = false;
-    }
+    private Integer membersAuthorityId;
+    private String memberId;
+    private String authorityId;
 }

@@ -3,7 +3,7 @@ package com.example.cores.gamma;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import com.example.modules.datasource.sample.ModuleDataSourceSampleScanner;
+import com.example.modules.datasource.security.ModuleDataSourceSecurityScanner;
 
 /**
  * CoresGammaPersistenceScanner
@@ -11,7 +11,7 @@ import com.example.modules.datasource.sample.ModuleDataSourceSampleScanner;
  * @author _sCream
  */
 @Import(value = {
-        ModuleDataSourceSampleScanner.class
+        ModuleDataSourceSecurityScanner.class
 })
 @ComponentScan(basePackageClasses = { CoresGammaPersistenceMarker.class })
 public class CoresGammaPersistenceScanner {

@@ -13,9 +13,12 @@ ext {
 }
 
 dependencies {
-    implementation project(':multiple-project:modules:datasource-sample')
+    implementation project(':multiple-project:modules:datasource-security')
 
     /** spring */
     // https://mvnrepository.com/artifact/org.springframework/spring-context
     api group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion
+    
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    api group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
 }

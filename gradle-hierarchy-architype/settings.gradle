@@ -12,6 +12,7 @@ include 'multiple-project:cores:beta-persistence'
 include 'multiple-project:cores:gamma-persistence'
 
 include 'multiple-project:modules:datasource-sample'
+include 'multiple-project:modules:datasource-security'
 include 'multiple-project:modules:messagesource-sample'
 include 'multiple-project:modules:security-token'
 include 'multiple-project:modules:openapi'

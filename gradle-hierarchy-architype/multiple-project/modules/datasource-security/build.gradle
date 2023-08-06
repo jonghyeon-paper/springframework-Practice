@@ -1,0 +1,20 @@
+bootJar {
+    enabled false
+}
+
+jar {
+    enabled true
+    archiveBaseName = 'datasource-security'
+    archiveVersion = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    api group: 'org.springframework', name: 'spring-context', version: springVersion
+    
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    api group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+    
+    // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
+    runtimeOnly group: 'org.hsqldb', name: 'hsqldb', version: '2.7.1'
+}

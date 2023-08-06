@@ -2,6 +2,7 @@ package com.example.applications.gamma.config;
 
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -13,6 +14,16 @@ import org.springframework.context.annotation.Profile;
  */
 @Configuration
 public class ServerConfig {
+
+    /**
+     * webServerFactoryCustomizer
+     * 
+     * @return
+     */
+    @Bean
+    public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> webServerFactoryCustomizer() {
+        return factory -> factory.setContextPath("/gamma");
+    }
 
     /**
      * localServer

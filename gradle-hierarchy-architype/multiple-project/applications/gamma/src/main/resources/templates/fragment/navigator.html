@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="navigatorFragment">
+        <h1>Menu section</h1>
+        <div class="container" id="navigator-section"></div>
+        <div class="container">
+            <a href="/gamma/auth/logout-process">logout</a>
+        </div>
+        <script>
+        $(document).ready(function(){
+            var renderMenu = function(menu) {
+                var $childUl = $('<ul>');
+                if (menu['childList'] !== null && menu['childList']) {
+                    menu['childList'].forEach((childItem) => {
+                        $childUl.append(renderMenu(childItem));
+                    });
+                }
+                
+                var $anchor = null;
+                if (menu['path'] != null && menu['path']) {
+                    $anchor = $('<a>').attr({href: contextPath + uiPrefix + menu['path']})
+                                      .text(menu['name']);
+                } else {
+                    $anchor = $('<p>').text(menu['name']);
+                }
+                
+                var $li = $('<li>').addClass('list-group-item')
+                                   .append($('<div>').append($anchor))
+                                   .append($childUl);
+                
+                return $li;
+            }
+
+            $.ajax({
+                url: contextPath + apiPrefix + '/accessable-menu',
+                type: 'get',
+                contentType: 'application/json',
+                success: function(result, status, xhr) {
+                    console.log('success - result : ', result);
+                    console.log('success - status : ', status);
+                    console.log('success - xhr : ', xhr);
+                    if (result !== null && result) {
+                        $('<ul>').addClass('list-group')
+                                 .append(renderMenu(result))
+                                 .appendTo('#navigator-section');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log('error - xhr : ', xhr);
+                    console.log('error - status : ', status);
+                    console.log('error - error : ', error);
+                    if (xhr['status'] === 401) {
+                        $('<a>').attr({href: contextPath + '/auth/login'})
+                                .text('please login...')
+                                .appendTo('#navigator-section');
+                    } else {
+                        $('#navigator-section').text('unknown error occur...')
+                    }
+                }
+            });
+        });
+        </script>
+    </th:block>
+</html>

@@ -1,0 +1,1 @@
+package com.example.applications.gamma.monitoring.model;

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragment/reference :: referenceFragment" ></th:block>
+</head>
+<body>
+    <h1>view::monitoring > menu-hierarchy</h1>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div th:text="${menuHierarchy.name}"></div>
+                <ul class="list-group" th:if = "${menuHierarchy.childList != null}">
+                    <li class="list-group-item" th:each="firstDepthMenu : ${menuHierarchy.childList}">
+                        <div th:text="${firstDepthMenu.name}"></div>
+                        <ul class="list-group" th:if = "${firstDepthMenu.childList != null}">
+                           <li class="list-group-item" th:each="secondDepthMenu : ${firstDepthMenu.childList}">
+                               <div th:text="${secondDepthMenu.name}"></div>
+                           </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

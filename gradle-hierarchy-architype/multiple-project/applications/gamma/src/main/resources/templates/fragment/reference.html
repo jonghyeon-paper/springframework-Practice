@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="referenceFragment">
+        <link th:href="@{/static/bootstrap/css/bootstrap.min.css}" rel="stylesheet"></link>
+        <script th:src="@{/static/bootstrap/js/bootstrap.bundle.min.js}" ></script>
+        <script th:src="@{/static/jquery/jquery-3.7.0.min.js}"></script>
+        <link id="contextPathHolder" th:data-contextPath="${#httpServletRequest.getContextPath()}"/>
+        <script>
+        var contextPath = $('#contextPathHolder').attr('data-contextPath');
+        var apiPrefix = '/api';
+        var uiPrefix = '/ui';
+        </script>
+    </th:block>
+</html>

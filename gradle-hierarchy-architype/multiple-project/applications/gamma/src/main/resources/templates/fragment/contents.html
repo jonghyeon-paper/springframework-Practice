@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="contentsFragment">
+        <h1>Contents section</h1>
+        <div class="container" id="contents-section">
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>MATHOD</th>
+                    <th>API-URI</th>
+                    <th>API-response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select class="form-select" id="method">
+                            <option value="get">GET</option>
+                            <option value="post">POST</option>
+                            <option value="put">PUT</option>
+                            <option value="patch">PATCH</option>
+                            <option value="delete">DELETE</option>
+                        </select>
+                    </td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="ex) /article/123" id="apiUri">
+                            <button type="button" class="btn btn-outline-secondary" id="apiCallButton">call</button>
+                        </div>
+                        </td>
+                    <td>
+                        <textarea class="form-control" id="apiResponse"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <script>
+        $(document).ready(function(){
+            $('#apiCallButton').on('click', function(){
+                var apiUri = $('#apiUri').val();
+                $.ajax({
+                    url: contextPath + apiPrefix + apiUri,
+                    type: $('#method').val(),
+                    contentType: 'application/json',
+                    success: function(result, status, xhr) {
+                        console.log('success - result : ', result);
+                        console.log('success - status : ', status);
+                        console.log('success - xhr : ', xhr);
+                        
+                        $('#apiResponse').text(JSON.stringify(result));
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('error - xhr : ', xhr);
+                        console.log('error - status : ', status);
+                        console.log('error - error : ', error);
+                        if (xhr['status'] === 401) {
+                            $('#apiResponse').text('[' + xhr['status'] + '] you are not logged in');
+                        } else if (xhr['status'] === 403) {
+                            $('#apiResponse').text('[' + xhr['status'] + '] you do not have permission');
+                        } else if (xhr['status'] === 404) {
+                            $('#apiResponse').text('[' + xhr['status'] + '] not found URI');
+                        } else if (xhr['status'] === 405) {
+                            $('#apiResponse').text('[' + xhr['status'] + '] not found API');
+                        } else {
+                            $('#apiResponse').text('[' + xhr['status'] + '] unknown error occur...');
+                        }
+                    }
+                });
+                
+            });
+        });
+        </script>
+    </th:block>
+</html>

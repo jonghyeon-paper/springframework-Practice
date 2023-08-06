@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragment/reference :: referenceFragment" ></th:block>
+</head>
+<body>
+    <h1>view::main</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <th:block th:replace="fragment/navigator :: navigatorFragment" ></th:block>
+            </div>
+            <div class="col-8">
+                <th:block th:replace="fragment/contents :: contentsFragment" ></th:block>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

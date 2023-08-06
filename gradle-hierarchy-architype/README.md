@@ -16,6 +16,9 @@ project description
 * beta-persistence : example
   * jpa
   * querydsl
+* gamma-persistence : example
+  * jpa
+  * querydsl
 
 
 project hierarchy 
@@ -31,7 +34,8 @@ project hierarchy
     │ └ greeting
     ├ cores
     │ ├ alpha-persistence
-    │ └ beta-persistence
+    │ ├ beta-persistence
+    │ └ gamma-persistence
     └ modules
       ├ datasource-sample
       ├ messagesource-sample
@@ -60,7 +64,9 @@ package hierarchy
     │ ├ alpha
     │ │ ├ jpa
     │ │ └ mybatis
-    │ └ beta
+    │ ├ beta
+    │ │ └ jpa
+    │ └ gamma
     │   └ jpa
     │
     │ /* com.example.modules.{module-name}.{...}.{...} */
@@ -97,7 +103,7 @@ application dependencies
 │ └────────────────────────┘ │
 └────────────────────────────┘
 ┌ gamma ─────────────────────┐
-│ ┌ ?-persistence ──────┐ │
+│ ┌ gamma-persistence ─────┐ │
 │ │ ┌ ?-sample ─┐ │ │
 │ │ │                    │ │ │
 │ │ └────────────────────┘ │ │

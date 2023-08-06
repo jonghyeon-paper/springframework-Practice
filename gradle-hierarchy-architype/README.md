@@ -1,24 +1,51 @@
 Multiple project architype
 
 project description
-* hello : example
-* alpha : example
+* hello : simple example
+
+* alpha : example of multiple project configurations
   * WAS config
   * version prefix apply to URI path
-  * datetime format config of object-mapper 
-* beta : example
+  * datetime format config of object-mapper
+
+* beta : example of multiple project configurations
   * WAS config
-* gamma : example
-  * something todo...
+
+* gamma : example of session based spring-security
+  * WAS config
+  * version prefix apply to URI path
+  * spring-security config
+  * thymeleaf config
+  * jquery and bootstrap
+  * demo code
+  * see '/gamma/README.md' file
+
+* greeting : simple example
+
 * alpha-persistence : example
-  * jpa
-  * mybatis
+  * using hibernate(jpa)
+  * using mybatis
+
 * beta-persistence : example
-  * jpa
-  * querydsl
+  * using hibernate(jpa)
+  * using querydsl
+
 * gamma-persistence : example
-  * jpa
-  * querydsl
+  * using hibernate(jpa)
+
+* datasource-sample : simple example
+  * using memory database
+
+* datasource-security : authentication and authorization data
+  * using memory database
+  * see '/datasource-security/README-ERD.md' file
+
+* messagesource-sample : simple example
+  * spring messagesource
+
+* openapi : documentation support
+  * using swagger
+  * see '/openapi/README-ADDRESS.md' file
 
 
 project hierarchy 
@@ -38,6 +65,7 @@ project hierarchy
     │ └ gamma-persistence
     └ modules
       ├ datasource-sample
+      ├ datasource-security
       ├ messagesource-sample
       └ openapi
 </pre>
@@ -72,7 +100,8 @@ package hierarchy
     │ /* com.example.modules.{module-name}.{...}.{...} */
     └ modules
       ├ datasource
-      │ └ sample
+      │ ├ sample
+      │ └ security
       ├ messagesource
       │ └ sample
       └ openapi
@@ -90,10 +119,10 @@ application dependencies
 │ │ ┌ datasource-sample ─┐ │ │
 │ │ │                    │ │ │
 │ │ └────────────────────┘ │ │
-│ │ ┌ openapi ─┐           │ │
-│ │ │          │           │ │
-│ │ └──────────┘           │ │
 │ └────────────────────────┘ │
+│ ┌ openapi ─┐               │
+│ │          │               │
+│ └──────────┘               │
 └────────────────────────────┘
 ┌ beta ──────────────────────┐
 │ ┌ beta-persistence ──────┐ │
@@ -102,11 +131,14 @@ application dependencies
 │ │ └────────────────────┘ │ │
 │ └────────────────────────┘ │
 └────────────────────────────┘
-┌ gamma ─────────────────────┐
-│ ┌ gamma-persistence ─────┐ │
-│ │ ┌ ?-sample ─┐ │ │
-│ │ │                    │ │ │
-│ │ └────────────────────┘ │ │
-│ └────────────────────────┘ │
-└────────────────────────────┘
+┌ gamma ───────────────────────┐
+│ ┌ gamma-persistence ───────┐ │
+│ │ ┌ datasource-security ─┐ │ │
+│ │ │                      │ │ │
+│ │ └──────────────────────┘ │ │
+│ └──────────────────────────┘ │
+│ ┌ openapi ─┐                 │
+│ │          │                 │
+│ └──────────┘                 │
+└──────────────────────────────┘
 </pre>

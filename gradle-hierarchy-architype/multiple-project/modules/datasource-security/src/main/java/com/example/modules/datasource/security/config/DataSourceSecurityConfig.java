@@ -21,7 +21,7 @@ public class DataSourceSecurityConfig {
      * 
      * @return
      */
-    @Bean("dataSourceSample")
+    @Bean("dataSourceSecurity")
     public DataSource dataSourceSecurity() {
         EmbeddedDatabase database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL)
                 .addScripts("classpath:hsqldb/ddl-create.sql", "classpath:hsqldb/dml-insert.sql")

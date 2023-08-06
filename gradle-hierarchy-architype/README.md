@@ -8,6 +8,8 @@ project description
   * datetime format config of object-mapper 
 * beta : example
   * WAS config
+* gamma : example
+  * something todo...
 * alpha-persistence : example
   * jpa
   * mybatis
@@ -23,7 +25,8 @@ project hierarchy
     ├ applications
     │ ├ hello
     │ ├ alpha
-    │ └ beta
+    │ ├ beta
+    │ └ gamma
     ├ businesses
     │ └ greeting
     ├ cores
@@ -31,7 +34,8 @@ project hierarchy
     │ └ beta-persistence
     └ modules
       ├ datasource-sample
-      └ messagesource-sample
+      ├ messagesource-sample
+      └ openapi
 </pre>
 
 package hierarchy 
@@ -42,7 +46,8 @@ package hierarchy
     ├ application
     │ ├ hello
     │ ├ alpha
-    │ └ beta
+    │ ├ beta
+    │ └ gamma
     │
     │ /* 'business' should work independently */
     │ /* com.example.businesses.{business-name}.{...}.{...} */
@@ -62,8 +67,9 @@ package hierarchy
     └ modules
       ├ datasource
       │ └ sample
-      └ messagesource
-        └ sample
+      ├ messagesource
+      │ └ sample
+      └ openapi
 </pre>
 
 application dependencies
@@ -78,11 +84,21 @@ application dependencies
 │ │ ┌ datasource-sample ─┐ │ │
 │ │ │                    │ │ │
 │ │ └────────────────────┘ │ │
+│ │ ┌ openapi ─┐           │ │
+│ │ │          │           │ │
+│ │ └──────────┘           │ │
 │ └────────────────────────┘ │
 └────────────────────────────┘
 ┌ beta ──────────────────────┐
 │ ┌ beta-persistence ──────┐ │
 │ │ ┌ datasource-sample ─┐ │ │
+│ │ │                    │ │ │
+│ │ └────────────────────┘ │ │
+│ └────────────────────────┘ │
+└────────────────────────────┘
+┌ gamma ─────────────────────┐
+│ ┌ ?-persistence ──────┐ │
+│ │ ┌ ?-sample ─┐ │ │
 │ │ │                    │ │ │
 │ │ └────────────────────┘ │ │
 │ └────────────────────────┘ │
